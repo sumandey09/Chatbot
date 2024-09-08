@@ -1,226 +1,36 @@
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HITGeeks Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="hero">
 
-.hero {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));
-    position: relative;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="code.mp4" type="video/mp4">
+    </video>
 
-nav {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav .logo {
-    width: 80px;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    list-style: none;
-    margin-left: 40px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #f0f0f0; /* Light gray text for better contrast */
-    font-size: 17px;
-}
-
-.content {
-    text-align: center;
-}
-
-.content h1 {
-    font-size: 100px;
-    color: #FFFFFF;
-    font-weight: 600;
-    transition: 0.5s;
-}
-
-.content h1:hover {
-    -webkit-text-stroke: 2px #295F98;
-    color: transparent;
-}
-.back-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ensures the video covers the background area */
-    transform: translate(-50%, -50%);  /* Centers the video */
-    z-index: -1;  /* Keeps the video behind content */
-    animation: rotate360 10s linear infinite; /* Optional rotation animation */
-}
-
-/* For screens with wider aspect ratios (16:9) */
-@media (min-aspect-ratio: 16/9) {
-    .back-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* For screens with narrower aspect ratios */
-@media (max-aspect-ratio: 16/9) {
-    .back-video {
-        width: auto;
-        height: 100%;
-    }
-}
-
-/* Chat Button */
-/* Chat Button */
-.content a {
-    text-decoration: none;
-    display: inline-block;
-    color: #ffffff; /* White text */
-    font-size: 24px; /* Larger font size */
-    background: linear-gradient(135deg, #1e90ff, #00bfff); /* Gradient background from light blue to sky blue */
-    border: none; /* Remove border */
-    padding: 16px 80px; /* Increased padding for a larger button */
-    border-radius: 50px; /* Rounded button */
-    margin-top: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-}
-
-.content a:hover {
-    transform: translateY(-5px); /* Lift the button slightly on hover */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
-    background: linear-gradient(135deg, #00bfff, #1e90ff); /* Reverse gradient on hover */
-}
-
-
-/* New button styles for Visit Our Mission and Support Us */
-.button-group {
-    margin-top: 20px;
-}
-
-.mission-btn, .support-btn {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 20px;
-    padding: 12px 50px;
-    border-radius: 50px;
-    margin: 10px;
-    transition: 0.3s;
-}
-
-.mission-btn {
-    background-color: #3498DB; /* Light blue for mission button */
-    border: 2px solid #ffffff;
-}
-
-.support-btn {
-    background-color: #E74C3C; /* Red color for support button */
-    border: 2px solid #ffffff;
-}
-
-.mission-btn:hover {
-    background-color: #2980B9; /* Darker blue on hover */
-}
-
-.support-btn:hover {
-    background-color: #C0392B; /* Darker red on hover */
-}
-
-.back-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    object-fit: cover;
-}
-
-@media(min-aspect-ratio:16/9) {
-    .back-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media(max-aspect-ratio:16/9) {
-    .back-video {
-        width: auto;
-        height: 100%;
-    }
-}
-
-/* Media query for tablets */
-@media screen and (max-width: 768px) {
-    nav {
-        padding: 20px 5%;
-    }
-    nav ul li {
-        margin-left: 20px;
-    }
-    nav ul li a {
-        font-size: 15px;
-    }
-    .content h1 {
-        font-size: 70px;
-    }
-    .content a {
-        font-size: 20px;
-        padding: 12px 50px;
-    }
-}
-
-/* Media query for mobile devices */
-@media screen and (max-width: 480px) {
-    nav {
-        padding: 20px 5%;
-    }
-    nav ul {
-        display: block;
-        text-align: center;
-    }
-    nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-    nav ul li a {
-        font-size: 14px;
-    }
-    .content h1 {
-        font-size: 50px;
-    }
-    .content a {
-        font-size: 18px;
-        padding: 10px 40px;
-    }
-    .button-group a {
-        font-size: 16px;
-        padding: 10px 40px;
-    }
-    .back-video {
-        width: 100%;
-        height: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: cover;
-    }
-}
+    <nav>
+        <img src="sd.png" class="logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Visit</a></li>
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Image Recognition Chatbot</h1>
+        <a href="https://leetcode.com/" class="rainbow-button">Chat Here</a>
+        <!-- Updated buttons -->
+        <div class="button-group">
+            <a href="#" class="mission-btn">Visit Our Mission</a>
+            <a href="#" class="support-btn">Support Us</a>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
