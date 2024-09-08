@@ -34,6 +34,7 @@ nav .logo {
 
 nav ul {
     display: flex;
+    margin-left: auto; /* Adjust navigation alignment */
 }
 
 nav ul li {
@@ -47,6 +48,7 @@ nav ul li a {
     font-size: 17px;
 }
 
+/* Content styles */
 .content {
     text-align: center;
 }
@@ -62,36 +64,7 @@ nav ul li a {
     -webkit-text-stroke: 2px #295F98;
     color: transparent;
 }
-.back-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ensures the video covers the background area */
-    transform: translate(-50%, -50%);  /* Centers the video */
-    z-index: -1;  /* Keeps the video behind content */
-    animation: rotate360 10s linear infinite; /* Optional rotation animation */
-}
 
-/* For screens with wider aspect ratios (16:9) */
-@media (min-aspect-ratio: 16/9) {
-    .back-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* For screens with narrower aspect ratios */
-@media (max-aspect-ratio: 16/9) {
-    .back-video {
-        width: auto;
-        height: 100%;
-    }
-}
-
-/* Chat Button */
-/* Chat Button */
 .content a {
     text-decoration: none;
     display: inline-block;
@@ -111,7 +84,6 @@ nav ul li a {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
     background: linear-gradient(135deg, #00bfff, #1e90ff); /* Reverse gradient on hover */
 }
-
 
 /* New button styles for Visit Our Mission and Support Us */
 .button-group {
@@ -146,12 +118,17 @@ nav ul li a {
     background-color: #C0392B; /* Darker red on hover */
 }
 
+/* Back Video */
 .back-video {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the video covers the background area */
+    transform: translate(-50%, -50%);  /* Centers the video */
+    z-index: -1;  /* Keeps the video behind content */
+    animation: rotate360 10s linear infinite; /* Optional rotation animation */
 }
 
 /* Modal styling */
@@ -171,7 +148,8 @@ nav ul li a {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 80%;
+    max-width: 600px;
     border-radius: 10px;
     text-align: center;
 }
@@ -190,16 +168,18 @@ nav ul li a {
     cursor: pointer;
 }
 
+/* Media Queries */
 
-
-@media(min-aspect-ratio:16/9) {
+/* For screens with wider aspect ratios (16:9) */
+@media (min-aspect-ratio: 16/9) {
     .back-video {
         width: 100%;
         height: auto;
     }
 }
 
-@media(max-aspect-ratio:16/9) {
+/* For screens with narrower aspect ratios */
+@media (max-aspect-ratio: 16/9) {
     .back-video {
         width: auto;
         height: 100%;
@@ -211,8 +191,13 @@ nav ul li a {
     nav {
         padding: 20px 5%;
     }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
     nav ul li {
-        margin-left: 20px;
+        margin-left: 0;
+        margin-top: 10px;
     }
     nav ul li a {
         font-size: 15px;
@@ -223,6 +208,13 @@ nav ul li a {
     .content a {
         font-size: 20px;
         padding: 12px 50px;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+    .mission-btn, .support-btn {
+        font-size: 18px;
+        padding: 10px 30px;
     }
 }
 
