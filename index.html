@@ -24,7 +24,7 @@
     </nav>
     <div class="content">
         <h1>Image Recognition Chatbot</h1>
-        <a href="https://leetcode.com/" class="rainbow-button">Chat Here</a>
+        <a href="#" class="rainbow-button">Chat Here</a>
         <!-- Updated buttons -->
         <div class="button-group">
             <a href="#" class="mission-btn">Visit Our Mission</a>
@@ -32,5 +32,19 @@
         </div>
     </div>
    </div>
+   <!-- Chatbot Modal -->
+<div id="chatbotModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Chatbot</h2>
+        <p>Welcome! How can I assist you today?</p>
+        <!-- Chatbot content (could be a form or AI interaction) -->
+        <input type="text" id="userInput" placeholder="Ask me anything...">
+        <button onclick="submitQuestion()">Send</button>
+        <div id="chatResponse"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+
 </body>
 </html>
